@@ -15,7 +15,7 @@ class MovieController extends Controller
     public function index()
     {
         $peliculas = Movie::all();
-        return view('verListadoPeliculas', compact($peliculas));
+        return view('verListadoPeliculas', compact('peliculas'));
     }
 
     /**
@@ -36,7 +36,18 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nueva_pelicula = new Movie;
+        // $path = $request['featured_img']->store('public/img');
+
+        $nueva_pelicula->title = $request->title;
+        $nueva_pelicula->rating = $request->rating;
+        $nueva_pelicula->awards = $request->awards;
+        $nueva_pelicula->release_date = $request->release_date;
+        $nueva_pelicula->length = $request->length;
+        $nueva_pelicula->genre_id = $request->genre_id;
+        $nueva_pelicula->save();
+
+        return redirect('/');
     }
 
     /**
@@ -45,9 +56,11 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie)
+    public function show(Movie $movie, Request $request)
     {
-        //
+        $movie = Movie::find($request->id);
+
+        return view('verPelicula', compact('movie'));
     }
 
     /**
@@ -56,9 +69,12 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $movie)
+    public function edit(Movie $movie, Request $req)
     {
-        //
+        $movie = Movie::find($req->id);
+        $genres = Genre::all();
+
+        return view('editarPelicula', compact('movie', 'genres'));
     }
 
     /**
@@ -70,7 +86,17 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        $movie = Movie::find($request->id);
+
+        $movie->title = $request->title;
+        $movie->rating = $request->rating;
+        $movie->awards = $request->awards;
+        $movie->release_date = $request->release_date;
+        $movie->length = $request->length;
+        $movie->genre_id = $request->genre_id;
+        $movie->save();
+
+        return view('verPelicula', compact('movie'));
     }
 
     /**
@@ -79,8 +105,11 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie)
+    public function destroy(Movie $movie, Request $req)
     {
-        //
+        $movie = Movie::find($req->id);
+        $movie->delete();
+
+        return view('eliminarPelicula', compact('movie'));
     }
 }

@@ -35,7 +35,13 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $genre = New Genre;
+
+        $genre->name = $request->name;
+        $genre->ranking = $request->ranking;
+        $genre->save();
+
+        return redirect('/');
     }
 
     /**
@@ -46,7 +52,10 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-        //
+        $movies = Movie::where('genre_id', '=', $id)->get();
+        $nombre_genre = Genre::find($id);
+
+        return view('verGenero', compact('movies', 'nombre_genre'));
     }
 
     /**

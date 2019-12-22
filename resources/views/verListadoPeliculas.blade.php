@@ -5,7 +5,7 @@
 <div class="">
   <ul>
   @forelse ($peliculas as $pelicula)
-    <li>{{$pelicula->name}}</li>
+    <li>{{$pelicula->title}}</li>
     <li>{{$pelicula->rating}}</li>
   @empty
 
