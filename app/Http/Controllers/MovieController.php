@@ -20,6 +20,11 @@ class MovieController extends Controller
         return view('verListadoPeliculas', compact('peliculas'));
     }
 
+    public function cargar(){
+      $genres = Genre::all();
+      return view('agregarPelicula', compact('genres'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -58,11 +63,11 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie, Request $request)
+    public function show(Movie $pelicula, Request $request)
     {
-        $movie = Movie::find($request->id);
+        $pelicula = Movie::find($request->id);
 
-        return view('verPelicula', compact('movie'));
+        return view('verPelicula', compact('pelicula'));
     }
 
     /**

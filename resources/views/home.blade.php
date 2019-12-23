@@ -19,7 +19,6 @@
             <button type="submit" class="btn btn-warning">Ver película</button>
           </form>
         {{-- <a href="/verPelicula"><div class="col-md-4">.col-md-4</div></a> --}}
-
         </div>
       </article>
     @empty

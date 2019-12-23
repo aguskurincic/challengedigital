@@ -3,7 +3,7 @@
 @section('content')
 
 
-  <div class="row">
+  {{-- <div class="row">
     @forelse ($peliculas as $pelicula)
       <article class="pelicula">
           <h4 class="name">{{$pelicula->name}}</h4>
@@ -22,23 +22,31 @@
     @empty
 
     @endforelse
-  </div>
+  </div> --}}
 
 
 
   <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+          <h1 class="name">{{$pelicula->title}}</h1>
+          <br>
+          <p class="rating">Rating: {{$pelicula->rating}}</p>
+          <p class="awards">Awards: {{$pelicula->awards}}</p>
+          <p class="release">Fecha de estreno: {{$pelicula->release_date}}</p>
+          <p class="length">Duración: {{$pelicula->length}} min.</p>
+          <p class="genre_id">Género: {{$pelicula->genre_id}}</p>
       </div>
   </div>
+  {{-- <div class="">
+    <p class="name">{{$actores->first_name}}</p>
+    <p class="name">{{$actores->last_name}}</p>
+  </div> --}}
 
   <div class="row mb-2">
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
+              <strong class="d-inline-block mb-2 text-primary">Actores</strong>
               <h3 class="mb-0">
                 <a class="text-dark" href="#">Featured post</a>
               </h3>
@@ -46,12 +54,11 @@
               <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
               <a href="#">Continue reading</a>
             </div>
-            <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
           </div>
         </div>
   </div>
 
-  <main role="main" class="container">
+  {{-- <main role="main" class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-italic border-bottom">
@@ -69,6 +76,6 @@
               <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             </blockquote>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-  </main>
+  </main> --}}
 
 @endsection

@@ -46,7 +46,7 @@
               </div>
             </li> --}}
           </ul>
-          <form class="form-inline" action="/peliculaEncontrada" method="get">
+          <form class="form-inline" action="/peliculaEncontrada" method=GET>
             <input class="form-control" type="search" placeholder="Pelicula..." name="busqueda">
             <button class="btn btn-primary" type="submit">Buscar</button>
           </form>
@@ -58,7 +58,7 @@
           <li class="botones"><a href="/login">Login</a></li>
 
         @else
-          <li class="botones"><a href="/verfavoritos">Ver más tarde</a></li>
+          {{-- <li class="botones"><a href="/verfavoritos">Ver más tarde</a></li> --}}
           <li>
             <a href="/verperfilusuario"><span class='saludo'>{{Auth::user()->name}}</span></a>
           </li>
