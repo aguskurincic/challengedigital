@@ -2,6 +2,30 @@
 
 @section('content')
 
+
+  <div class="row">
+    @forelse ($peliculas as $pelicula)
+      <article class="pelicula">
+          <h4 class="name">{{$pelicula->name}}</h4>
+          <p class="rating">Rating: {{$pelicula->rating}}</p>
+          <p class="awards">Awards: {{$pelicula->awards}}</p>
+        <div class="botones">
+          <form class="" action="/verPelicula" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$pelicula->id}}">
+            <button type="submit" class="btn btn-warning">Ver película</button>
+          </form>
+        <a href="/verPelicula"><div class="col-md-4">.col-md-4</div></a>
+
+        </div>
+      </article>
+    @empty
+
+    @endforelse
+  </div>
+
+
+
   <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
           <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
@@ -46,5 +70,5 @@
             </blockquote>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
   </main>
-  
+
 @endsection

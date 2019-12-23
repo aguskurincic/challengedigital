@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Movie;
 use Illuminate\Http\Request;
+use Auth;
+use App\Genre;
 
 class MovieController extends Controller
 {
@@ -14,7 +16,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $peliculas = Movie::all();
+        $peliculas = Movie::paginate(10);
         return view('verListadoPeliculas', compact('peliculas'));
     }
 

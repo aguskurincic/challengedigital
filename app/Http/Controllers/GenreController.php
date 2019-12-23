@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Genre;
 use Illuminate\Http\Request;
+use App\Movie;
 
 class GenreController extends Controller
 {
@@ -52,10 +53,10 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-        $movies = Movie::where('genre_id', '=', $id)->get();
+        $peliculas = Movie::where('genre_id', '=', $id)->get();
         $nombre_genre = Genre::find($id);
 
-        return view('verGenero', compact('movies', 'nombre_genre'));
+        return view('/verGenero', compact('peliculas', 'nombre_genre'));
     }
 
     /**

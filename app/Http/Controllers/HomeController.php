@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -23,10 +24,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $peliculas = Movie::paginate(5);
+      return view('home', compact('peliculas'));
     }
 
     public function entry(){
       return view('entry');
+    }
+
+    public function buscar(){
+      $busqueda = '%' .$_GET['busqueda']. '%';
+      $peliculas = Movie::where('title', 'like', "$busqueda")->get();
+
+      return view('peliculaEncontrada', compact('peliculas'));
     }
 }

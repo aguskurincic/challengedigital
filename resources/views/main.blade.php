@@ -20,8 +20,8 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Pelis CH</a>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="top_bar">
+        <a class="navbar-brand" href="/">Pelis CH</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Titulos <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/verListadoPeliculas">Titulos <span class="sr-only">(current)</span></a>
             </li>
             {{-- <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -46,10 +46,36 @@
               </div>
             </li> --}}
           </ul>
-          <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search">
+          <form class="form-inline" action="/peliculaEncontrada" method="get">
+            <input class="form-control" type="search" placeholder="Pelicula..." name="busqueda">
+            <button class="btn btn-primary" type="submit">Buscar</button>
           </form>
         </div>
+
+        <ul class="menu_bar" id="headerbar">
+        @guest
+          <li class="botones"><a href="/register">Regitrarse</a></li>
+          <li class="botones"><a href="/login">Login</a></li>
+
+        @else
+          <li class="botones"><a href="/verfavoritos">Ver más tarde</a></li>
+          <li>
+            <a href="/verperfilusuario"><span class='saludo'>{{Auth::user()->name}}</span></a>
+          </li>
+
+          <li>
+            <a style="margin-right: 5px" class="btn btn-warning" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none">
+                @csrf
+            </form>
+          </li>
+        @endif
+      </ul>
       </nav>
     </header>
 

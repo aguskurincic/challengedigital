@@ -17,6 +17,8 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@entry');
+Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@entry');
 Route::get('/verListadoPeliculas', 'MovieController@index');
+Route::post('/verPelicula', 'MovieController@show')->middleware('auth');
+Route::get('/verGenero/{id}', 'GenreController@show')->middleware('auth');
