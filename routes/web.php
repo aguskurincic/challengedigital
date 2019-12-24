@@ -26,3 +26,4 @@ Route::get('/verActores', 'ActorController@listado');
 Route::get('/peliculaEncontrada', 'HomeController@buscar');
 Route::get('/agregarPelicula', 'MovieController@cargar')->middleware('auth');
 Route::post('/agregarPelicula', 'MovieController@store')->middleware('auth');
+Route::get('/editarPelicula', 'MovieController@edit')->middleware('auth')->middleware('rol');

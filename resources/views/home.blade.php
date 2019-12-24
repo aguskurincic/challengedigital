@@ -6,7 +6,7 @@
   <h1>Películas</h1>
   <br>
 
-  <div class="container">
+  <div class="container" id="homepelic">
     @forelse ($peliculas as $pelicula)
       <article class="pelicula">
           <h4 class="title">{{$pelicula->title}}</h4>

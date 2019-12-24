@@ -16,6 +16,11 @@ body{
   margin-right: 8px;
 }
 
+#homepelic{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* Footer */
 
 #linksfooter{

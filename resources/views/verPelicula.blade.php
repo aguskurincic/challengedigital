@@ -42,6 +42,21 @@
     <p class="name">{{$actores->last_name}}</p>
   </div> --}}
 
+  {{-- BOTONES EDITAR / ELIMINAR --}}
+
+  <!-- <form class="buttoncolor" action="/editarProducto" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$product->id}}">
+            <button type="submit" class="btn btn-warning" id="colorbtn">Editar Producto</a>
+          </form>
+
+          <form class="buttoncolor" action="/eliminarProducto" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$product->id}}">
+            <button type="submit" class="btn btn-danger" id="colorbtn">Eliminar Producto</a>
+          </form> -->
+
+
   <div class="row mb-2">
         <div class="col-md-6">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
