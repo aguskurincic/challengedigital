@@ -14,7 +14,7 @@ class AddRolToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+          $table->smallInteger('rol')->default(0)->after('password');
         });
     }
 
@@ -26,7 +26,7 @@ class AddRolToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('rol');
         });
     }
 }

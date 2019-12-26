@@ -76,12 +76,12 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $movie, Request $req)
+    public function edit(Movie $pelicula, Request $req)
     {
-        $movie = Movie::find($req->id);
+        $pelicula = Movie::find($req->id);
         $genres = Genre::all();
 
-        return view('editarPelicula', compact('movie', 'genres'));
+        return view('editarPelicula', compact('pelicula', 'genres'));
     }
 
     /**
@@ -91,19 +91,19 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(Request $request, Movie $pelicula)
     {
-        $movie = Movie::find($request->id);
+        $pelicula = Movie::find($request->id);
 
-        $movie->title = $request->title;
-        $movie->rating = $request->rating;
-        $movie->awards = $request->awards;
-        $movie->release_date = $request->release_date;
-        $movie->length = $request->length;
-        $movie->genre_id = $request->genre_id;
-        $movie->save();
+        $pelicula->title = $request->title;
+        $pelicula->rating = $request->rating;
+        $pelicula->awards = $request->awards;
+        $pelicula->release_date = $request->release_date;
+        $pelicula->length = $request->length;
+        $pelicula->genre_id = $request->genre_id;
+        $pelicula->save();
 
-        return view('verPelicula', compact('movie'));
+        return view('verPelicula', compact('pelicula'));
     }
 
     /**
@@ -112,11 +112,11 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie, Request $req)
+    public function destroy(Movie $pelicula, Request $req)
     {
-        $movie = Movie::find($req->id);
-        $movie->delete();
+        $pelicula = Movie::find($req->id);
+        $pelicula->delete();
 
-        return view('eliminarPelicula', compact('movie'));
+        return view('eliminarPelicula', compact('pelicula'));
     }
 }
