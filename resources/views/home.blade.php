@@ -16,9 +16,9 @@
           <form class="" action="/verPelicula" method="post">
             @csrf
             <input type="hidden" name="id" value="{{$pelicula->id}}">
-            <button type="submit" class="btn btn-warning">Ver película</button>
+            <button type="submit" class="btn btn-success">Ver película</button>
           </form>
-        {{-- <a href="/verPelicula"><div class="col-md-4">.col-md-4</div></a> --}}
+
         </div>
       </article>
     @empty
@@ -30,23 +30,4 @@
   <h1 align="center">Agregadas recientemente</h1>
   <br>
 
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 @endsection

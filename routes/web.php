@@ -21,8 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/', 'HomeController@entry');
 Route::get('/verListadoPeliculas', 'MovieController@index');
 Route::post('/verPelicula', 'MovieController@show')->middleware('auth');
-// Route::get('/verGenero/{id}', 'GenreController@show')->middleware('auth');
-Route::get('/verActores', 'ActorController@listado');
+// Route::get('/verActores', 'ActorController@listado');
 Route::get('/peliculaEncontrada', 'HomeController@buscar');
 Route::get('/agregarPelicula', 'MovieController@cargar')->middleware('auth');
 Route::post('/agregarPelicula', 'MovieController@store')->middleware('auth')->middleware('rol');
@@ -30,3 +29,4 @@ Route::post('/editarPelicula', 'MovieController@edit')->middleware('auth')->midd
 Route::post('/eliminarPelicula', 'MovieController@destroy')->middleware('auth')->middleware('rol');
 Route::get('/verPerfil', 'UserController@index')->middleware('auth');
 Route::post('/peliculaEditada', 'MovieController@update')->middleware('auth');
+// Route::get('/', 'HomeController@ultimas');

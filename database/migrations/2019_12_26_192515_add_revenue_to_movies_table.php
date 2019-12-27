@@ -14,7 +14,7 @@ class AddRevenueToMoviesTable extends Migration
     public function up()
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table->smallInteger('revenue')->default(null)->after('awards');
+            $table->integer('revenue')->default(0)->after('awards');
         });
     }
 

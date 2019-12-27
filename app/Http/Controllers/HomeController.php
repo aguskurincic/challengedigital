@@ -28,6 +28,10 @@ class HomeController extends Controller
       return view('home', compact('peliculas'));
     }
 
+    // public function ultimas(){
+    //   $peliculas = Movie::whereDate('registered_at')
+    // }
+
     public function entry(){
       return view('entry');
     }

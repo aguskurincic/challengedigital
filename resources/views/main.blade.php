@@ -31,20 +31,6 @@
             <li class="nav-item active">
               <a class="nav-link" href="/verListadoPeliculas">Titulos <span class="sr-only">(current)</span></a>
             </li>
-            {{-- <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li> --}}
-            {{-- <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li> --}}
-            {{-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown03">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li> --}}
           </ul>
           <form class="form-inline" action="/peliculaEncontrada" method=GET>
             <input class="form-control" type="search" placeholder="Pelicula..." name="busqueda">
@@ -58,13 +44,13 @@
           <li class="botones"><a href="/login">Login</a></li>
 
         @else
-          {{-- <li class="botones"><a href="/verfavoritos">Ver más tarde</a></li> --}}
+        <div class="logcuenta">
           <li>
-            <a href="/verPerfil"><span class='saludo'>{{Auth::user()->name}}</span></a>
+            <span class='saludo'>{{Auth::user()->name}}</span>
           </li>
 
           <li>
-            <a style="margin-right: 5px" class="btn btn-warning" href="{{ route('logout') }}"
+            <a id="botonlog" style="margin-right: 5px" class="btn btn-warning" href="{{ route('logout') }}"
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
@@ -74,6 +60,7 @@
                 @csrf
             </form>
           </li>
+        </div>
         @endif
       </ul>
       </nav>
@@ -83,13 +70,13 @@
 
     <footer>
       <nav class ="footer_bar" id="footerlinks">
-          <ul class="footer_menu_bar">
+        <div class="menu_bar">
           <li class="botones"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-          <br>
+
           <li class="botones"><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <br>
+
           <li class="botones"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-        </ul>
+        </div>
       </nav>
     </footer>
 

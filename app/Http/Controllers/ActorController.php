@@ -17,10 +17,10 @@ class ActorController extends Controller
         //
     }
 
-    public function listado(){
-      $actores = Actor::all();
-      return view('verActores', compact('actores'));
-    }
+    // public function listado(){
+    //   $actores = Actor::all();
+    //   return view('verActores', compact('actores'));
+    // }
 
     /**
      * Show the form for creating a new resource.

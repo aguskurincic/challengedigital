@@ -51,9 +51,23 @@
                       <label for="rating" class="col-md-4 col-form-label text-md-right">{{ __('Rating') }}</label>
 
                       <div class="col-md-6">
-                          <input id="rating" type="number" class="form-control @error('rating') is-invalid @enderror" name="rating" value="{{ old('rating') }}" required autocomplete="rating" autofocus>
+                          <input id="rating" type="numeric" class="form-control @error('rating') is-invalid @enderror" name="rating" value="{{ old('rating') }}" required autocomplete="rating" autofocus>
 
                           @error('rating')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                      </div>
+                  </div>
+
+                  <div class="form-group row">
+                      <label for="revenue" class="col-md-4 col-form-label text-md-right">{{ __('Ingresos') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="revenue" type="number" class="form-control @error('revenue') is-invalid @enderror" name="revenue" value="{{ old('revenue') }}" required autocomplete="revenue" autofocus>
+
+                          @error('revenue')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
                               </span>

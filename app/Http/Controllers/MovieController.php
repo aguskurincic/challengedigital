@@ -6,6 +6,7 @@ use App\Movie;
 use Illuminate\Http\Request;
 use Auth;
 use App\Genre;
+use App\Actor;
 
 class MovieController extends Controller
 {
@@ -49,6 +50,7 @@ class MovieController extends Controller
         $nueva_pelicula->title = $request->title;
         $nueva_pelicula->rating = $request->rating;
         $nueva_pelicula->awards = $request->awards;
+        $nueva_pelicula->revenue = $request->revenue;
         $nueva_pelicula->release_date = $request->release_date;
         $nueva_pelicula->length = $request->length;
         $nueva_pelicula->genre_id = $request->genre_id;
@@ -66,6 +68,7 @@ class MovieController extends Controller
     public function show(Movie $pelicula, Request $request)
     {
         $pelicula = Movie::find($request->id);
+        // $actores = Actor::where('actor_id', '=', "$pelicula->id");
 
         return view('verPelicula', compact('pelicula'));
     }
