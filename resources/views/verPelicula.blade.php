@@ -3,29 +3,6 @@
 @section('content')
 
 
-  {{-- <div class="row">
-    @forelse ($peliculas as $pelicula)
-      <article class="pelicula">
-          <h4 class="name">{{$pelicula->name}}</h4>
-          <p class="rating">Rating: {{$pelicula->rating}}</p>
-          <p class="awards">Awards: {{$pelicula->awards}}</p>
-        <div class="botones">
-          <form class="" action="/verPelicula" method="post">
-            @csrf
-            <input type="hidden" name="id" value="{{$pelicula->id}}">
-            <button type="submit" class="btn btn-warning">Ver película</button>
-          </form>
-        <a href="/verPelicula"><div class="col-md-4">.col-md-4</div></a>
-
-        </div>
-      </article>
-    @empty
-
-    @endforelse
-  </div> --}}
-
-
-
   <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
           <h1 class="name">{{$pelicula->title}}</h1>
@@ -37,25 +14,27 @@
           <p class="genre_id">Género: {{$pelicula->genre_id}}</p>
       </div>
   </div>
-  {{-- <div class="">
-    <p class="name">{{$actores->first_name}}</p>
-    <p class="name">{{$actores->last_name}}</p>
-  </div> --}}
 
   {{-- BOTONES EDITAR / ELIMINAR --}}
+<div class="botonesEM">
+    {{-- <form class="buttoncolor" action="/agregarPelicula" method="post">
+       @csrf
+       <input type="hidden" name="id" value="{{$pelicula->id}}">
+       <button type="submit" class="btn btn-success" id="colorbtn">Agregar Película</a>
+     </form> --}}
 
-  <!-- <form class="buttoncolor" action="/editarProducto" method="post">
-            @csrf
-            <input type="hidden" name="id" value="{{$product->id}}">
-            <button type="submit" class="btn btn-warning" id="colorbtn">Editar Producto</a>
-          </form>
+     <form class="buttoncolor" action="/editarPelicula" method="post">
+      @csrf
+      <input type="hidden" name="id" value="{{$pelicula->id}}">
+      <button type="submit" class="btn btn-warning" id="colorbtn">Editar Película</a>
+    </form>
 
-          <form class="buttoncolor" action="/eliminarProducto" method="post">
-            @csrf
-            <input type="hidden" name="id" value="{{$product->id}}">
-            <button type="submit" class="btn btn-danger" id="colorbtn">Eliminar Producto</a>
-          </form> -->
-
+    <form class="buttoncolor" action="/eliminarPelicula" method="post">
+      @csrf
+      <input type="hidden" name="id" value="{{$pelicula->id}}">
+      <button type="submit" class="btn btn-danger" id="colorbtn">Eliminar Película</a>
+    </form>
+</div>
 
   <div class="row mb-2">
         <div class="col-md-6">

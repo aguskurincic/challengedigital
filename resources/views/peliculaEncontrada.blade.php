@@ -15,6 +15,11 @@
       <input type="hidden" name="id" value="{{$pelicula->id}}">
       {{-- <button type="submit" class="btn btn-warning">Ver pelicula</a> --}}
     </form>
+    <form class="" action="/verPelicula" method="post">
+      @csrf
+      <input type="hidden" name="id" value="{{$pelicula->id}}">
+      <button type="submit" class="btn btn-warning">Ver película</button>
+    </form>
   </article>
 
 @empty

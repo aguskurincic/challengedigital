@@ -3,7 +3,7 @@
 @section('content')
 
   <br>
-  <h1>Películas</h1>
+  <h1 align="center">Películas</h1>
   <br>
 
   <div class="container" id="homepelic">
@@ -27,7 +27,7 @@
   </div>
 
   <br>
-  <h1>Agregadas recientemente</h1>
+  <h1 align="center">Agregadas recientemente</h1>
   <br>
 
 {{-- <div class="container">

@@ -106,6 +106,11 @@ class MovieController extends Controller
         return view('verPelicula', compact('pelicula'));
     }
 
+    public function listadoAPI(){
+      $peliculas = Movie::all();
+      return json_encode($peliculas);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

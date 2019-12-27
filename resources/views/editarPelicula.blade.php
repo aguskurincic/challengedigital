@@ -50,7 +50,7 @@
                         <label for="rating" class="col-md-4 col-form-label text-md-right">{{ __('Rating') }}</label>
 
                         <div class="col-md-6">
-                            <input id="rating" type="number" class="form-control @error('rating') is-invalid @enderror" name="rating" value="{{ old('rating') }}" required autocomplete="rating" autofocus>
+                            <input id="rating" type="numeric" class="form-control @error('rating') is-invalid @enderror" name="rating" value="{{ old('rating') }}" required autocomplete="rating" autofocus>
 
                             @error('rating')
                                 <span class="invalid-feedback" role="alert">
@@ -104,8 +104,9 @@
                   </div>
 
                 <br>
-                    <div class="form-group row mb-0" id="botoncargar">
+                    <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
+                          <input type="hidden" name="id" value="{{$pelicula->id}}">
                             <button type="submit" class="btn btn-success" value="{{$pelicula->id}}">
                                 {{ __('Editar película') }}
                             </button>
@@ -115,8 +116,6 @@
             </div>
         </div>
   </div>
-
-
 
 
 @endsection

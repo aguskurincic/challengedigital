@@ -12,7 +12,7 @@ class RolesMiddleware
       return $next($request);
     }
     else{
-      return redirect('/');
+      return redirect('mensaje');
     }
   }
 

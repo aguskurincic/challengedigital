@@ -60,7 +60,7 @@
         @else
           {{-- <li class="botones"><a href="/verfavoritos">Ver más tarde</a></li> --}}
           <li>
-            <a href="/verperfilusuario"><span class='saludo'>{{Auth::user()->name}}</span></a>
+            <a href="/verPerfil"><span class='saludo'>{{Auth::user()->name}}</span></a>
           </li>
 
           <li>
