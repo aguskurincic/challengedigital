@@ -20,17 +20,15 @@
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-primary">Actores</strong>
-              {{-- <ul>
+
+              <ul>
                 @forelse ($actores as $actor)
-                  <li>{{$actor->first_name}}</li>
-                  <li>{{$actor->last_name}}</li>
+                  <li>{{$actor->first_name}} {{$actor->last_name}}</li>
                 @empty
 
                 @endforelse
-              </ul> --}}
-                    {{-- <ul>
-                      <li>{{$actores->first_name}} {{$actores->last_name}}</li>
-                    </ul> --}}
+              </ul>
+
             </div>
           </div>
         </div>

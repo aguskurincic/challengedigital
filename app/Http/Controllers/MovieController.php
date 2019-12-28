@@ -68,9 +68,9 @@ class MovieController extends Controller
     public function show(Movie $pelicula, Request $request)
     {
         $pelicula = Movie::find($request->id);
-        // $actores = Actor::where('actor_id', '=', "$pelicula->id");
+        $actores = $pelicula->actor;
 
-        return view('verPelicula', compact('pelicula'));
+        return view('verPelicula', compact('pelicula', 'actores'));
     }
 
     /**
