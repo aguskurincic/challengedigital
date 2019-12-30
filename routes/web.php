@@ -29,4 +29,3 @@ Route::post('/editarPelicula', 'MovieController@edit')->middleware('auth')->midd
 Route::post('/eliminarPelicula', 'MovieController@destroy')->middleware('auth')->middleware('rol');
 Route::get('/verPerfil', 'UserController@index')->middleware('auth');
 Route::post('/peliculaEditada', 'MovieController@update')->middleware('auth');
-// Route::get('/', 'HomeController@ultimas');

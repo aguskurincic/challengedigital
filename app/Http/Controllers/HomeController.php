@@ -24,13 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $peliculas = Movie::paginate(5);
-      return view('home', compact('peliculas'));
+      $peliculas = Movie::all()->random(5);
+      $ultimaspeliculas = Movie::orderby('created_at', 'desc')->take(5)->get();
+      return view('home', compact('peliculas', 'ultimaspeliculas'));
     }
-
-    // public function ultimas(){
-    //   $peliculas = Movie::whereDate('registered_at')
-    // }
 
     public function entry(){
       return view('entry');

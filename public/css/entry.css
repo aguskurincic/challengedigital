@@ -4,6 +4,10 @@ body{
   height: 90%;
 }
 
+.saludo{
+  color: white;
+}
+
 .menu_bar{
   display: flex;
   flex-flow: wrap;
