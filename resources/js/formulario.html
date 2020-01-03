@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Regitro</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
@@ -16,33 +16,33 @@
         <div class="row justify-content-center">
           <div class="form-group col-md-6">
             <label for="name">Nombre</label>
-            <input type="text" class="form-control" name="name" minlength="3" required>
+            <input type="text" class="form-control" name="nombre" minlength="3" id="nombre" required>
           </div>
           <div class="form-group col-md-6">
             <label for="surname">Apellido</label>
-            <input type="text" class="form-control" name="surname" minlength="3" required>
+            <input type="text" class="form-control" name="apellido" minlength="3" id="apellido" required>
           </div>
         </div>
         <div class="form-group">
           <label for="edad">Edad</label>
-          <input type="number" class="form-control" name="edad" max="150" required>
+          <input type="number" class="form-control" name="edad" max="150" id="edad" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" name="email" required>
+          <input type="email" class="form-control" name="email" id="email" required>
         </div>
         <div class="form-group">
           <label for="password">Contraseña</label>
-          <input type="password" class="form-control" name="password" min="8" required>
+          <input type="password" class="form-control" name="contraseña" min="8" id="contraseña" required>
         </div>
         <div class="form-group">
           <label for="password2">Confirmar contraseña</label>
-          <input type="password" class="form-control" name="password2" min="8" required>
+          <input type="password" class="form-control" name="contraseña2" id="contraseña2" min="8" required>
         </div>
 
         <div class="row justify-content-center">
           <div class="form-check">
-            <button type="submit" onsubmit="myFunction" class="btn btn-primary">Sign in</button>
+            <button type="submit" onclick="ejemplo()"  class="btn btn-primary">Sign in</button>
           </div>
         </div>
 
@@ -53,8 +53,21 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" <source src="formulario.js">></script>
-      <script type="text/javascript">
+      <!-- <script type="text/javascript">
         function myFunction() {
+
+          // var caract_invalido = " ";
+          // var caract_longitudNombre = "3";
+          // var caract_longitudPass = "8";
+          // var pass1 = $(#register-form #password).val();
+          // var pass1 = $(#register-form #password2).val();
+          // if (pass1 == '' || pass2 = '') {
+          //   alert('Debes introducir la clave en ambos campos');
+          //   e.preventDefault();
+          //   return false
+          // }
+
+
           var name = document.form.name.value;
           var surname = document.form.surname.value;
           var edad = document.form.edad.value;
@@ -72,17 +85,17 @@
             return false;
           }
 
-          if (edad > 150) {
+          if (edad.value > 150) {
             alert("La edad debe ser menor a 150 años");
             return false;
           }
 
-          if (password < 8) {
+          if (password.value < 8) {
             alert("La contraseña debe contener al menos 8 caracteres");
             return false;
           }
 
-          if (password2 != password) {
+          if (password2.value != password) {
             alert("Las contraseñas no coinciden");
             return false;
           }
@@ -93,10 +106,7 @@
 
         console.log(document.form);
 
-      </script>
-
-      <!-- <script type="text/javascript">
-        alert("Regitro exitoso!");
       </script> -->
+
   </body>
 </html>

@@ -1,3 +1,19 @@
+function validar(){
+
+
+  var nombre, apellido, edad, email, contraseña1, contraseña2;
+
+  nombre = document.getElementById('nombre').value;
+  apellido = document.getElementById('apellido').value;
+  edad = document.getElementById('edad').value;
+  email = document.getElementById('email').value;
+  contraseña1 = document.getElementById('contraseña1').value;
+  contraseña2 = document.getElementById('contraseña2').value;
+
+
+}
+
+
 // function onSubmit() {
 //
 // var campoNombre = document.querySelector('input[name=name]');
@@ -75,6 +91,7 @@
 // }
 
 function myFunction() {
+
   var name = document.form.name.value;
   var surname = document.form.surname.value;
   var edad = document.form.edad.value;
@@ -109,4 +126,8 @@ function myFunction() {
 
   return alert("Regitro exitoso!");
 
+}
+
+function ejemplo(){
+    console.log("llegue");
 }
